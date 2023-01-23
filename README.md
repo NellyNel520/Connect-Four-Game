@@ -33,10 +33,10 @@ The project itself was deployed and can be viewed [here]().
 ***
 ### ***Screenshots***
 ##### Image Header 1
-![Image](https://i.postimg.cc/bNFWxKV5/memoji-laptop.png)
+![Image]()
 
 ##### Image Header 2
-![Image](https://i.postimg.cc/4dLQCTck/memoji2.png)
+![Image]()
 
 *** 
 ### ***Task List***
@@ -47,7 +47,7 @@ The project itself was deployed and can be viewed [here]().
     -[]Draw Conditions
     -[]Player Movement
     -[]Restarting the game once board completed 
-- [x]Landing page 
+- []Landing page 
 -[]Additional styling 
     -[]Animation and Sound effects
 
