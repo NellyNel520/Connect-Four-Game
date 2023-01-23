@@ -43,13 +43,13 @@ The project itself was deployed and can be viewed [here]().
 - [] Setting up the project structure using HTML & CSS
 - [] CSS Styling to design the and game board
 - [] Game Logic
-    -[]Winning Combinatins 
-    -[]Draw Conditions
-    -[]Player Movement
-    -[]Restarting the game once board completed 
-- []Landing page 
--[]Additional styling 
-    -[]Animation and Sound effects
+    -[] Winning Combinatins 
+    -[] Draw Conditions
+    -[] Player Movement
+    -[] Restarting the game once board completed 
+- [] Landing page 
+-[] Additional styling 
+    -[] Animation and Sound effects
 
 
 ***
