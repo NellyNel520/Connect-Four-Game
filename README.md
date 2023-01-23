@@ -18,8 +18,8 @@ If all 42 game pieces are played and no player has places four pieces in a row, 
     * DOM load manipulatipn
     * event listeners
 * CSS
-    *Styling
-    *Animation
+    * Styling
+    * Animation
 
 ***
 
