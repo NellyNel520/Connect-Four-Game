@@ -3,11 +3,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Google font links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap" rel="stylesheet">
     <!-- Style Sheet -->
     <link rel="stylesheet" href="./game.css" />
     <title>Connect 4</title>
 </head>
 <body>
+    <header>
+        <nav>
+            <h1>Connect 4!</h1>
+            <a class="nav-link" href="./index.html">Home</a>
+            <a class="nav-link" href="./game.html">Play Game!</a>
+        </nav>
+    </header>
+    
     <div class="wrapper">
         <div id="playerTurn">Demo Text</div>
         <div class="container"></div>
@@ -22,7 +34,7 @@
           </div>
         </div>
       </div>
-      <div class="startScreen">
+      <div class="startScreen hide">
         <div id="message"></div>
         <button id="start">Start Game</button>
       </div>
