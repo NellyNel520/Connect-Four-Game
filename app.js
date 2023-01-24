@@ -23,10 +23,26 @@ const selectRandomNumber = (min, max) =>
 Math.floor(Math.random() * (max - min)) + min
 
 // Checks rows for matches
-const checkAdjacentColumnValues = (row) => {
+const checkAdjacentRowValues = (row) => {
     return verifyArray(initMatrix[row])
 }
 
+// Check column for matches 
+const checkAdjacentColumnValues = (column) => {
+    let colWinCount = 0
+    colWinBool = false
+    initMatrix.forEach((element, index) => {
+        if(element[column] == currentPlayer) {
+            colWinCount += 1
+            if (colWinCount == 4) {
+                colWinBool = true
+            }
+        } else {
+            colWinCount = 0
+        }
+    })
+    return colWinBool
+}
 //Checking for win Logic 
 const winCheck = (row, column) => {
     // if any of the functions return true ... return true
