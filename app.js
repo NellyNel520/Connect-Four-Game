@@ -20,6 +20,18 @@ let currentPlayer
 const selectRandomNumber = (min, max) =>
 Math.floor(Math.random() * (max - min)) + min
 
+//Checking for win Logic 
+const winCheck = (row, column) => {
+    // if any of the functions return true ... return true
+    return checkAdjacentRowValues(row)
+    ? true 
+    : checkAdjacentColumnValues(column)
+    ? true 
+    : checkAdjacentDiagonalValues(row, column) ? true 
+    : false
+}
+
+
 //set Token to exact points
 const setToken = (startCount, colValue) => {
     let rows = document.querySelectorAll(".grid-row")
