@@ -1,6 +1,6 @@
-const { verify } = require("jsonwebtoken")
 
-// DOM reference / Global 
+
+// DOM reference / Global variables
 const container = document.querySelector(".container")
 const playerTurn = document.getElementById("playerTurn")
 const startScreen = document.querySelector(".startScreen")
@@ -70,13 +70,16 @@ const getRightDiagonal = (row, column, rowLength, columnLength) => {
     }
     return rightDiagonal
 }
+//Get Left diagonal values
+
+
 
 //Check diagonal 
 const checkAdjacentDiagonalValues = (row, column) => {
     let diagWinBool = false
     let tempChecks = {
-        letTop: [],
-        rightTop: []
+        leftTop: [],
+        rightTop: [],
     }
     let columnLength = initMatrix[row].length
     let rowLength = initMatrix.length
