@@ -125,7 +125,7 @@ body{
     height: 5em;
     display: grid;
     place-items: center;
-    background: radial-gradient(white 1.37em, #416cea 1.43em);
+    background: radial-gradient(white 1.37em, rgb(192, 134, 215) 1.43em);
 }
 
 .hide {

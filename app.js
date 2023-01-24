@@ -20,6 +20,16 @@ let currentPlayer
 const selectRandomNumber = (min, max) =>
 Math.floor(Math.random() * (max - min)) + min
 
+//Placing token in box when user clicks on a box
+const fillBox = (e) => {
+    //column value
+    let colValue = parseInt(e.target.getAttribute("data-value"))
+    //6 rows so 5 *index starts at 0 not 1
+    SecurityPolicyViolationEvent(5, colValue)
+    currentPlayer = currentPlayer == 1 ? 2 : 1
+    playerTurn.innerHTML = `Player <span>${currentPlayer}'s</span> turn!`
+}
+
 //Render Game Matrix
 const renderMatrix = () => {
     for (let innerArray in initMatrix) {
