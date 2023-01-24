@@ -1,3 +1,5 @@
+const { verify } = require("jsonwebtoken")
+
 // DOM reference / Global 
 const container = document.querySelector(".container")
 const playerTurn = document.getElementById("playerTurn")
@@ -14,11 +16,16 @@ let initMatrix = [
     [0, 0, 0, 0, 0, 0, 0],
 ]
 
-let currentPlayer 
+let currentPlayer
 
 //Selects a random number from given range
 const selectRandomNumber = (min, max) =>
 Math.floor(Math.random() * (max - min)) + min
+
+// Checks rows for matches
+const checkAdjacentColumnValues = (row) => {
+    return verifyArray(initMatrix[row])
+}
 
 //Checking for win Logic 
 const winCheck = (row, column) => {
