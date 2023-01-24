@@ -24,11 +24,12 @@ Math.floor(Math.random() * (max - min)) + min
 const winCheck = (row, column) => {
     // if any of the functions return true ... return true
     return checkAdjacentRowValues(row)
-    ? true 
-    : checkAdjacentColumnValues(column)
-    ? true 
-    : checkAdjacentDiagonalValues(row, column) ? true 
-    : false
+        ? true 
+        : checkAdjacentColumnValues(column)
+        ? true 
+        : checkAdjacentDiagonalValues(row, column) 
+        ? true 
+        : false
 }
 
 
@@ -65,7 +66,7 @@ const fillBox = (e) => {
     //column value
     let colValue = parseInt(e.target.getAttribute("data-value"))
     //6 rows so 5 *index starts at 0 not 1
-    SecurityPolicyViolationEvent(5, colValue)
+    setToken(5, colValue)
     currentPlayer = currentPlayer == 1 ? 2 : 1
     playerTurn.innerHTML = `Player <span>${currentPlayer}'s</span> turn!`
 }
