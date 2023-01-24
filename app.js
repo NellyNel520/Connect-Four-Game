@@ -31,12 +31,21 @@ const renderMatrix = () => {
             let innerDiv = document.createElement("div")
             innerDiv.classList.add("grid-box")
             innerDiv.setAttribute("data-value", j)
-            innerDiv.addEventListener("click", (event) => {
-                fillBox(event)
+            innerDiv.addEventListener("click", (e) => {
+                fillBox(e)
             })
             outerDiv.appendChild(innerDiv)
         }
         container.appendChild(outerDiv)
     }
+}
+
+//Start Game 
+window.onload = startGame = async () => {
+    //select random number between 1&2 to determine player 1 & 2
+    currentPlayer = selectRandomNumber(1,3)
+    container.innerHTML = ""
+    await renderMatrix()
+    playerTurn.innerHTML = `Player <span>${currentPlayer}'s</span> turn!`
 }
 
