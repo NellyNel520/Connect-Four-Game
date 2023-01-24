@@ -43,6 +43,7 @@ The project itself was deployed and can be viewed [here]().
 - [] Setting up the project structure using HTML & CSS
 - [] CSS Styling to design the and game board
 - [] Game Logic
+    - []Game Matirx
     - [] Winning Combinatins 
     - [] Draw Conditions
     - [] Player Movement
