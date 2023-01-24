@@ -45,6 +45,32 @@ const checkAdjacentColumnValues = (column) => {
     return colWinBool
 }
 
+//Get right diagonal values
+const getRightDiagonal = (row, column, rowLength, columnLength) => {
+    let rowCount = row
+    let columnCount = column
+    let rightDiagonal = []
+    while (rowCount > 0){
+        if(columnCount >= columnLength - 1){
+            break
+        }
+        rowCount -= 1
+        columnCount += 1
+        rightDiagonal.unshift(initMatrix[rowCount] [columnCount])
+    }
+    rowCount = row
+    columnCount = column
+    while (rowCount < rowLength) {
+        if (columnCount <  0){
+            break
+        }
+        rightDiagonal.push(initMatrix [rowCount][columnCount])
+        rowCount += 1
+        columnCount -= 1
+    }
+    return rightDiagonal
+}
+
 //Check diagonal 
 const checkAdjacentDiagonalValues = (row, column) => {
     let diagWinBool = false
