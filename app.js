@@ -41,8 +41,36 @@ const checkAdjacentColumnValues = (column) => {
             colWinCount = 0
         }
     })
+    //if theres no match 
     return colWinBool
 }
+
+//Check diagonal 
+const checkAdjacentDiagonalValues = (row, column) => {
+    let diagWinBool = false
+    let tempChecks = {
+        letTop: [],
+        rightTop: []
+    }
+    let columnLength = initMatrix[row].length
+    let rowLength = initMatrix.length
+
+
+    //Store left and right diagonal array
+    tempChecks.leftTop = [
+        ...getLeftDiagonal(row, column, rowLength, columnLength),
+    ]
+    tempChecks.rightTop = [
+        ...getRightDiagonal(row, column, rowLength, columnLength),
+    ]
+    //check both arrays for matches
+    diagWinBool = verifyArray(tempChecks.rightTop)
+    if(!diagWinBool) {
+        diagWinBool = verifyArray(tempChecks.leftTop)
+    }
+    return diagWinBool
+}
+
 //Checking for win Logic 
 const winCheck = (row, column) => {
     // if any of the functions return true ... return true
