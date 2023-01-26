@@ -60,7 +60,7 @@ body{
     grid-template-columns: 1fr 1fr;
 }
 
-.player-wrapper {
+.player-wrappers {
     display: flex;
     align-items: center;
     flex-direction: column;

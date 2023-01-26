@@ -1,5 +1,3 @@
-
-
 // DOM reference / Global variables
 const container = document.querySelector(".container")
 const playerTurn = document.getElementById("playerTurn")
@@ -18,9 +16,45 @@ let initMatrix = [
 
 let currentPlayer
 
-//Selects a random number from given range
+//Selects a random number doesn't always start with player 1
 const selectRandomNumber = (min, max) =>
 Math.floor(Math.random() * (max - min)) + min
+
+//Loop through array
+const verifyArray = (arrayElement) => {
+    let bool = false
+    let elementCount = 0
+    arrayElement.forEach((element, index) => {
+        if(element == currentPlayer) {
+            elementCount += 1
+            if(elementCount == 4) {
+                bool = true
+            }
+        }
+        else {
+            elementCount = 0
+        }
+    })
+    return bool
+}
+
+// Game Over Check
+const gameOverCheck = () => {
+    let truthCount = 0
+    for(let innerArray of initMatrix) {
+        if (innerArray.every((val) => val != 0)) {
+            truthCount += 1
+        } else {
+            return false
+        }
+    }
+    if (truthCount == 6) {
+        message.innerHTML = "Game Over!"
+        startScreen.classList.remove("hide")
+    }
+}
+
+
 
 // Checks rows for matches
 const checkAdjacentRowValues = (row) => {
@@ -44,6 +78,7 @@ const checkAdjacentColumnValues = (column) => {
     //if theres no match 
     return colWinBool
 }
+
 
 //Get right diagonal values
 const getRightDiagonal = (row, column, rowLength, columnLength) => {
@@ -71,6 +106,31 @@ const getRightDiagonal = (row, column, rowLength, columnLength) => {
     return rightDiagonal
 }
 //Get Left diagonal values
+const getLeftDiagonal = (row, column, rowLength, columnLength) => {
+    let rowCount = row 
+let columnCount = column
+let leftDiagonal = []
+while (rowCount>0) {
+    if (columnCount<=0) {
+        break
+    }
+    row -= 1
+    columnCount -= 1
+    leftDiagonal.unshift(initMatrix[rowCount] [columnCount])
+}
+rowCount = row
+columnCount = column
+while (rowCount < rowLength) {
+    if (columnCount >= columnLength) {
+        break
+    }
+    leftDiagonal.push(initMatrix[rowCount] [columnCount])
+    rowCount +=1
+    columnCount += 1
+    }
+    return leftDiagonal
+}
+
 
 
 
@@ -99,6 +159,7 @@ const checkAdjacentDiagonalValues = (row, column) => {
     }
     return diagWinBool
 }
+
 
 //Checking for win Logic 
 const winCheck = (row, column) => {
@@ -138,9 +199,6 @@ const setToken = (startCount, colValue) => {
 
 }
 
-
-
-
 //User clicks -> Placing token in box 
 const fillBox = (e) => {
     //column value
@@ -148,10 +206,11 @@ const fillBox = (e) => {
     //6 rows so 5 *index starts at 0 not 1
     setToken(5, colValue)
     currentPlayer = currentPlayer == 1 ? 2 : 1
+
     playerTurn.innerHTML = `Player <span>${currentPlayer}'s</span> turn!`
 }
 
-//Render Game Matrix
+// /Render Game Matrix
 const renderMatrix = () => {
     for (let innerArray in initMatrix) {
         let outerDiv = document.createElement("div")
@@ -175,9 +234,8 @@ const renderMatrix = () => {
 //Start Game 
 window.onload = startGame = async () => {
     //select random number between 1&2 to determine player 1 & 2
-    currentPlayer = selectRandomNumber(1,3)
+    currentPlayer = selectRandomNumber(1, 3)
     container.innerHTML = ""
     await renderMatrix()
     playerTurn.innerHTML = `Player <span>${currentPlayer}'s</span> turn!`
 }
-
