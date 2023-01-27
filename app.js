@@ -239,3 +239,9 @@ window.onload = startGame = async () => {
     await renderMatrix()
     playerTurn.innerHTML = `Player <span>${currentPlayer}'s</span> turn!`
 }
+
+//Start Game Event listener
+startButton.addEventListener("click", () => {
+    startScreen.classList.add("hide")
+    startGame()
+})
