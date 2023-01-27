@@ -33,8 +33,9 @@ h1{
     font-family: 'Paprika', cursive;
     text-align: center;
     padding-top: 15px;
+
     font-size: 3rem;
-    color: darkgrey;
+    color: rgb(181, 85, 219);
 }
 h1 span{
     color: black;
@@ -51,13 +52,16 @@ body{
 
 main{
     margin: 15px;
+    justify-content: center;
 }
 .container{
     border: 10px solid gray;
     border-radius: 10%;
-    padding: 25px;
+    position: relative;
+    width: 33.75em;
     text-align: center;
-    margin-top: 8rem;
+    padding: 1rem;
+    margin: 6rem 24rem 0 24rem;
     background-color: rgb(159, 154, 149);
 }
 button a{
