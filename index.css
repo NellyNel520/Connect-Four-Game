@@ -14,9 +14,12 @@ nav a{
 }
 nav h1{
     float: left;
-    font-size: 2rem;
-    font-family: 'Petit Formal Script', cursive;
+    font-size: 2.5rem;
+    font-family: 'Great Vibes', cursive;
     color: rgb(192, 134, 215);
+}
+h2{
+    text-decoration: underline;
 }
 nav a:hover{
     background-color: rgb(192, 134, 215);
@@ -25,6 +28,16 @@ nav a:hover{
 nav a.active{
     background-color: #04aa6d;
     color: white;
+}
+h1{
+    font-family: 'Paprika', cursive;
+    text-align: center;
+    padding-top: 15px;
+    font-size: 3rem;
+    color: darkgrey;
+}
+h1 span{
+    color: black;
 }
 
 /* *************** */
@@ -40,8 +53,20 @@ main{
     margin: 15px;
 }
 .container{
-    border: 3px solid gray;
-    padding: 15px;
+    border: 10px solid gray;
+    border-radius: 10%;
+    padding: 25px;
     text-align: center;
     margin-top: 8rem;
+    background-color: rgb(159, 154, 149);
+}
+button a{
+    text-decoration: none;
+    font-size: 1rem;
+}
+button{
+    padding: 10px;
+}
+button:hover {
+    background-color: #04aa6d;
 }
